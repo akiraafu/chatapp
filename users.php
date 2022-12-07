@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=2.0" />
     <title>Realtime Chat App | AkiChat</title>
     <link rel="stylesheet" href="app.css" />
     <script
@@ -32,9 +32,9 @@
         <div class="users-list">
           <a href="#">
             <div class="content">
-              <img src="./1.jpg" alt="" />
+              <img src="./2.jpg" alt="" />
               <div class="details">
-                <span>Akira Fu</span>
+                <span>Mew</span>
                 <p>This is a test message</p>
               </div>
             </div>
@@ -42,9 +42,9 @@
           </a>
           <a href="#">
             <div class="content">
-              <img src="./1.jpg" alt="" />
+              <img src="./2.jpg" alt="" />
               <div class="details">
-                <span>Akira Fu</span>
+                <span>Mew</span>
                 <p>This is a test message</p>
               </div>
             </div>
@@ -52,9 +52,9 @@
           </a>
           <a href="#">
             <div class="content">
-              <img src="./1.jpg" alt="" />
+              <img src="./2.jpg" alt="" />
               <div class="details">
-                <span>Akira Fu</span>
+                <span>Mew</span>
                 <p>This is a test message</p>
               </div>
             </div>
@@ -62,9 +62,9 @@
           </a>
           <a href="#">
             <div class="content">
-              <img src="./1.jpg" alt="" />
+              <img src="./2.jpg" alt="" />
               <div class="details">
-                <span>Akira Fu</span>
+                <span>Mew</span>
                 <p>This is a test message</p>
               </div>
             </div>
@@ -72,9 +72,9 @@
           </a>
           <a href="#">
             <div class="content">
-              <img src="./1.jpg" alt="" />
+              <img src="./2.jpg" alt="" />
               <div class="details">
-                <span>Akira Fu</span>
+                <span>Mew</span>
                 <p>This is a test message</p>
               </div>
             </div>
@@ -82,9 +82,9 @@
           </a>
           <a href="#">
             <div class="content">
-              <img src="./1.jpg" alt="" />
+              <img src="./2.jpg" alt="" />
               <div class="details">
-                <span>Akira Fu</span>
+                <span>Mew</span>
                 <p>This is a test message</p>
               </div>
             </div>
@@ -92,9 +92,9 @@
           </a>
           <a href="#">
             <div class="content">
-              <img src="./1.jpg" alt="" />
+              <img src="./2.jpg" alt="" />
               <div class="details">
-                <span>Akira Fu</span>
+                <span>Mew</span>
                 <p>This is a test message</p>
               </div>
             </div>
@@ -103,5 +103,7 @@
         </div>
       </section>
     </div>
+
+    <script src="./javascript/users.js"></script>
   </body>
 </html>
