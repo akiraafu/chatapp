@@ -12,12 +12,12 @@ if(!isset($_SESSION['unique_id'])){
       <section class="chat-area">
         <header>
         <?php
-          include_once 'php/config.php';
-          $user_id= mysqli_real_escape_string($conn, $_GET['user_id']);
+          include_once './php/config.php';
+          $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
           $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$user_id}");
           if(mysqli_num_rows($sql) > 0){
             $row = mysqli_fetch_assoc($sql);
-          }
+          };
           ?>
 
           <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
@@ -28,30 +28,16 @@ if(!isset($_SESSION['unique_id'])){
           </div>
         </header>
         <div class="chat-box">
-          <div class="chat outgoing">
-            <div class="details">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
-                iure!
-              </p>
-            </div>
-          </div>
-          <div class="chat incoming">
-            <img src="./2.jpg" alt="" />
-            <div class="details">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
-                iure!
-              </p>
-            </div>
-          </div>
-          
         </div>
-        <form action="#" class="typing-area">
-          <input type="text" placeholder="Type a message here..." />
+        <form action="#" class="typing-area" autocomplete="off">
+          <input type="text" name="outgoing_id" value="<?php echo $_SESSION['unique_id']; ?>" hidden/>
+          <input type="text" name="incoming_id" value="<?php echo $user_id; ?>" hidden/>
+          <input type="text" name="message" class="input-field" placeholder="Type a message here..." />
           <button><i class="fa-sharp fa-solid fa-paper-plane"></i></button>
         </form>
       </section>
     </div>
+
+    <script src="./javascript/chat.js"></script>
   </body>
 </html>
