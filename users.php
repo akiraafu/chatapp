@@ -1,25 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=2.0" />
-    <title>Realtime Chat App | AkiChat</title>
-    <link rel="stylesheet" href="app.css" />
-    <script
-      src="https://kit.fontawesome.com/3132341f2b.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+<?php
+session_start();
+if(!isset($_SESSION['unique_id'])){
+  header("location:login.php");
+}
+?>
+
+<?php include_once "header.php"; ?>
   <body>
     <div class="wrapper">
       <section class="users">
         <header>
+          <?php
+          include_once 'php/config.php';
+          $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+          if(mysqli_num_rows($sql) > 0){
+            $row = mysqli_fetch_assoc($sql);
+          }
+          ?>
           <div class="content">
-            <img src="./1.jpg" alt="image" />
+            <img src="./php/images/<?php echo $row['image']?>" alt="image" />
             <div class="details">
-              <span>Akira Fu</span>
-              <p>Active now</p>
+              <span><?php echo $row['fname'] .' '. $row['lname'] ?></span>
+              <p><?php echo $row['status']?></p>
             </div>
           </div>
           <a href="#" class="logout">Log out</a>
@@ -30,76 +32,8 @@
           <button><i class="fas fa-search"></i></button>
         </div>
         <div class="users-list">
-          <a href="#">
-            <div class="content">
-              <img src="./2.jpg" alt="" />
-              <div class="details">
-                <span>Mew</span>
-                <p>This is a test message</p>
-              </div>
-            </div>
-            <div class="status-dot"><i class="fas fa-circle"></i></div>
-          </a>
-          <a href="#">
-            <div class="content">
-              <img src="./2.jpg" alt="" />
-              <div class="details">
-                <span>Mew</span>
-                <p>This is a test message</p>
-              </div>
-            </div>
-            <div class="status-dot"><i class="fas fa-circle"></i></div>
-          </a>
-          <a href="#">
-            <div class="content">
-              <img src="./2.jpg" alt="" />
-              <div class="details">
-                <span>Mew</span>
-                <p>This is a test message</p>
-              </div>
-            </div>
-            <div class="status-dot"><i class="fas fa-circle"></i></div>
-          </a>
-          <a href="#">
-            <div class="content">
-              <img src="./2.jpg" alt="" />
-              <div class="details">
-                <span>Mew</span>
-                <p>This is a test message</p>
-              </div>
-            </div>
-            <div class="status-dot"><i class="fas fa-circle"></i></div>
-          </a>
-          <a href="#">
-            <div class="content">
-              <img src="./2.jpg" alt="" />
-              <div class="details">
-                <span>Mew</span>
-                <p>This is a test message</p>
-              </div>
-            </div>
-            <div class="status-dot"><i class="fas fa-circle"></i></div>
-          </a>
-          <a href="#">
-            <div class="content">
-              <img src="./2.jpg" alt="" />
-              <div class="details">
-                <span>Mew</span>
-                <p>This is a test message</p>
-              </div>
-            </div>
-            <div class="status-dot"><i class="fas fa-circle"></i></div>
-          </a>
-          <a href="#">
-            <div class="content">
-              <img src="./2.jpg" alt="" />
-              <div class="details">
-                <span>Mew</span>
-                <p>This is a test message</p>
-              </div>
-            </div>
-            <div class="status-dot"><i class="fas fa-circle"></i></div>
-          </a>
+
+         
         </div>
       </section>
     </div>
